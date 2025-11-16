@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tavian Resume</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+    <!-- Shutdown Overlay -->
+    <div class="shutdown-overlay" id="shutdown-overlay">
+        <div class="shutdown-spinner"></div>
+        <div class="shutdown-text">Shutting down...</div>
+    </div>
+
+    <!-- Power Menu -->
+    <div class="power-menu" id="power-menu">
+        <div class="power-option" onclick="sleepComputer()">
+            <span>💤</span>
+            <span>Sleep</span>
+        </div>
+        <div class="power-option" onclick="shutdownComputer()">
+            <span>⏻</span>
+            <span>Shut down</span>
+        </div>
+        <div class="power-option" onclick="restartComputer()">
+            <span>🔄</span>
+            <span>Restart</span>
+        </div>
+    </div>
+
+    <!-- Lock Screen -->
+    <div class="lock-screen" id="lock-screen" onclick="unlockScreen()">
+        <div class="lock-time" id="lock-time">12:00</div>
+        <div class="lock-date" id="lock-date">Wednesday, November 5</div>
+        <div class="lock-user">
+            <div class="lock-avatar">👨‍💻</div>
+            <div class="lock-name">Tavian Bishop</div>
+            <div class="lock-hint">Click anywhere to unlock</div>
+        </div>
+    </div>
+
+    <div class="desktop">
+        <div class="desktop-icons">
+            <div class="icon" onclick="openWindow('about')">
+                <div class="icon-image">🌐</div>
+                <div class="icon-label">About Me</div>
+            </div>
+            <div class="icon" onclick="openWindow('resume')">
+                <div class="icon-image">📄</div>
+                <div class="icon-label">Resume</div>
+            </div>
+            <div class="icon" onclick="openWindow('work')">
+                <div class="icon-image">💼</div>
+                <div class="icon-label">My Work</div>
+            </div>
+            <div class="icon" onclick="openWindow('linkedin')">
+                <div class="icon-image">🔗</div>
+                <div class="icon-label">LinkedIn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me Window (Browser) -->
+    <div class="window" id="about-window" style="width: 900px; height: 600px; left: 100px; top: 80px;">
+        <div class="window-titlebar" id="about-titlebar">
+            <span class="window-title">About Me - Browser</span>
+            <div class="window-controls">
+                <div class="window-control minimize" onclick="minimizeWindow('about')">─</div>
+                <div class="window-control maximize" onclick="maximizeWindow('about')">□</div>
+                <div class="window-control close" onclick="closeWindow('about')">✕</div>
+            </div>
+        </div>
+        <div class="browser-toolbar">
+            <div class="browser-nav">
+                <button onclick="navigateBack()">←</button>
+                <button onclick="navigateForward()">→</button>
+                <button onclick="refreshBrowser()">⟳</button>
+            </div>
+            <input type="text" class="browser-url" id="browser-url" value="about://me" readonly>
+        </div>
+        <div class="window-content" id="browser-content">
+            <h1>About Me</h1>
+            <p style="margin-top: 20px; line-height: 1.6;">
+             Hello! Welcome to my website my name is Tavian Bishop. I’m a Computer Science major from Louisiana, born and raised with a passion for technology, problem-solving, and collaboration. I’m an aspiring software engineer who loves building innovative, user-centered experiences that make a real impact. My hands-on experience in web development, programming, and leadership roles has taught me the importance of clean, efficient code and the power of teamwork in bringing great ideas to life.
+            <br>
+            I’m skilled in problem-solving, data structures and algorithms, and turning challenges into opportunities to learn and grow. More than anything, I enjoy working with others in team environments where I can collaborate, share ideas, and continue developing as both a programmer and a person.
+            <br>
+            Outside of coding, you can usually find me watching sports, diving into anime, or exploring new tech trends. I also love working out and spending quality time with family and friends — they’re a huge part of who I am and keep me grounded and motivated.
+            </p>
+            <h2 style="margin-top: 30px; color: #0078d4;">Skills</h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                • Full-Stack Development<br>
+                • UI/UX Design<br>
+                • Problem Solving<br>
+                • Algorithm Design<br>
+                • Database Management
+            </p>
+            <h2 style="margin-top: 30px; color: #0078d4;">What Makes Me Different</h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                I believe in pushing boundaries and creating memorable experiences. This Windows 10-themed portfolio 
+                demonstrates my attention to detail, creativity, and technical skills all at once.
+            </p>
+        </div>
+        <div class="resize-handle"></div>
+    </div>
+
+    <!-- Resume Window -->
+    <div class="window" id="resume-window" style="width: 850px; height: 650px; left: 150px; top: 100px;">
+        <div class="window-titlebar" id="resume-titlebar">
+            <span class="window-title">Resume.pdf - Adobe Acrobat Reader</span>
+            <div class="window-controls">
+                <div class="window-control minimize" onclick="minimizeWindow('resume')">─</div>
+                <div class="window-control maximize" onclick="maximizeWindow('resume')">□</div>
+                <div class="window-control close" onclick="closeWindow('resume')">✕</div>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="resume-content">
+                <h1 style="text-align: center; margin-bottom: 10px;">Tavian Bishop</h1>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                    Bishopcoding@gmail.com | (225) 290-8707| Thibodaux, Louisiana
+                </p>
+
+                <div class="resume-section">
+                    <h2>Education</h2>
+                    <p><strong>Bachelor of Science in Computer Science</strong></p>
+                    <p>Nicholls State University | Expected Graduation: Fall 2026</p>
+                </div>
+
+                <div class="resume-section">
+                    <h2>Internships</h2>
+                    <p><strong> Software engineer</strong> | Oceaneering</p>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 8px;"> June 2025 - September 2025</p></p>
+                      <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li>Assisted in the development and maintenance of proprietary ROV simulation software, contributing to real-time underwater vehicle testing and operator training tools.</li>
+                        <li>Collaborated with a cross-functional team of engineers to design, test, and debug simulation modules</li>
+                        <li>Developed and refined user interface components to enhance the visualization and interaction of ROV simulations.</li>
+                        <li>Contributed to code reviews, testing, and documentation, ensuring reliability, maintainability, and scalability of simulation systems.</li>
+                        <li>Strengthened teamwork, communication, and problem-solving skills by collaborating in an agile, research-driven environment focused on innovation and precision.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-section">
+                    <h2>Experience</h2>
+                    <p><strong>Manager</strong> | Best Buy</p>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 8px;"> June 2023 - Present</p>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li>Supervised and motivated a team of sales associates and specialists to exceed daily, weekly, and quarterly performance goals.</li>
+                        <li>Delivered exceptional customer service by resolving escalated issues and ensuring a positive, solution-focused shopping experience.</li>
+                        <li>Trained and coached employees on sales techniques, product knowledge, and company procedures, fostering professional growth and team success.</li>
+                        <li>Recognized for strong leadership, communication, and problem-solving skills, contributing to improved employee retention and morale.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-section">
+                    <h2>Projects</h2>
+                    <p><strong>Windows 10 based portfolio website</strong></p>
+                    <p style="margin-bottom: 8px;">Brief description of the project and technologies used</p>
+                </div>
+
+                <div class="resume-section">
+                    <h2>Technical Skills</h2>
+                    <p><strong>Languages:</strong> Python, Java, JavaScript, C++, SQL</p>
+                    <p><strong>Technologies:</strong> React, Node.js, Git, Docker, AWS</p>
+                </div>
+            </div>
+        </div>
+        <div class="resize-handle"></div>
+    </div>
+
+    <!-- My Work Window -->
+    <div class="window" id="work-window" style="width: 900px; height: 600px; left: 200px; top: 120px;">
+        <div class="window-titlebar" id="work-titlebar">
+            <span class="window-title">My Work - Portfolio</span>
+            <div class="window-controls">
+                <div class="window-control minimize" onclick="minimizeWindow('work')">─</div>
+                <div class="window-control maximize" onclick="maximizeWindow('work')">□</div>
+                <div class="window-control close" onclick="closeWindow('work')">✕</div>
+            </div>
+        </div>
+        <div class="window-content">
+            <h1 style="margin-bottom: 30px;">My Projects</h1>
+            <div class="work-grid">
+                <div class="work-card">
+                    <h3>Project One</h3>
+                    <p style="color: #666; margin-top: 8px;">
+                        A full-stack web application built with React and Node.js
+                    </p>
+                    <p style="margin-top: 12px; font-size: 13px; color: #0078d4;">
+                        React • Node.js • MongoDB
+                    </p>
+                </div>
+                <div class="work-card">
+                    <h3>Project Two</h3>
+                    <p style="color: #666; margin-top: 8px;">
+                        Machine learning model for data analysis and prediction
+                    </p>
+                    <p style="margin-top: 12px; font-size: 13px; color: #0078d4;">
+                        Python • TensorFlow • Pandas
+                    </p>
+                </div>
+                <div class="work-card">
+                    <h3>Project Three</h3>
+                    <p style="color: #666; margin-top: 8px;">
+                        Mobile application for productivity and task management
+                    </p>
+                    <p style="margin-top: 12px; font-size: 13px; color: #0078d4;">
+                        React Native • Firebase
+                    </p>
+                </div>
+                <div class="work-card">
+                    <h3>Project Four</h3>
+                    <p style="color: #666; margin-top: 8px;">
+                        Algorithm visualization tool for educational purposes
+                    </p>
+                    <p style="margin-top: 12px; font-size: 13px; color: #0078d4;">
+                        JavaScript • D3.js
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="resize-handle"></div>
+    </div>
+
+    <!-- LinkedIn Window -->
+    <div class="window" id="linkedin-window" style="width: 600px; height: 400px; left: 250px; top: 140px;">
+        <div class="window-titlebar" id="linkedin-titlebar">
+            <span class="window-title">LinkedIn Profile</span>
+            <div class="window-controls">
+                <div class="window-control minimize" onclick="minimizeWindow('linkedin')">─</div>
+                <div class="window-control maximize" onclick="maximizeWindow('linkedin')">□</div>
+                <div class="window-control close" onclick="closeWindow('linkedin')">✕</div>
+            </div>
+        </div>
+        <div class="window-content linkedin-content">
+            <h1>Connect With Me</h1>
+            <p style="margin-top: 20px; color: #666;">
+                Let's connect on LinkedIn! I'm always open to networking and discussing opportunities.
+            </p>
+            <a href="www.linkedin.com/in/tavian-bishop-891a39361" target="_blank" class="linkedin-button">
+                View My LinkedIn Profile
+            </a>
+            <p style="margin-top: 30px; font-size: 14px; color: #999;">
+                Click the button above to visit my LinkedIn profile in a new tab
+            </p>
+        </div>
+        <div class="resize-handle"></div>
+    </div>
+
+    <!-- Start Menu -->
+     <div class="start-menu" id="start-menu">
+    <div class="start-menu-sidebar">
+        <div class="sidebar-icon-item">☰</div>
+        <div class="sidebar-icon-item" title="File Explorer">📁</div>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-icon-item" title="Settings" onclick="alert('Settings clicked!')">⚙</div>
+        <div class="sidebar-icon-item" title="Power" onclick="showPowerMenu(event)">⏻</div>
+    </div>
+    
+    <div class="start-menu-content">
+        <div class="start-menu-apps-list">
+            <div class="apps-list-header">Recently added</div>
+            <div class="app-list-item">
+                    <div class="app-list-icon">🖥️</div>
+                    <div>PC Health Check</div>
+                    </div>
+            <div class="letter-divider">#</div>
+            <div class="app-list-item">
+            <div class="app-list-icon">📦</div>
+            <div>3D Viewer</div>
+                </div>
+            <div class="letter-divider">A</div>
+            <div class="app-list-item" onclick="openWindow('about'); toggleStartMenu()">
+                <div class="app-list-icon">🌐</div>
+                <div>About Me</div>
+            </div>
+             <div class="letter-divider">C</div>
+                <div class="app-list-item">
+                    <div class="app-list-icon">🔢</div>
+                    <div>Calculator</div>
+                </div>
+                <div class="app-list-item">
+                    <div class="app-list-icon">📅</div>
+                    <div>Calendar</div>
+                </div>
+                <div class="app-list-item">
+                    <div class="app-list-icon">📷</div>
+                    <div>Camera</div>
+                </div>
+                <div class="app-list-item">
+                    <div class="app-list-icon">🕐</div>
+                    <div>Clock</div>
+                </div>
+                <div class="letter-divider">G</div>
+
+                <div class="app-list-item">
+                    <div class="app-list-icon">❓</div>
+                    <div>Get Help</div>
+                </div>
+                <div class="app-list-item">
+                    <div class="app-list-icon">🎵</div>
+                    <div>Groove Music</div>
+                </div>
+                <div class="letter-divider">L</div>
+
+                <div class="app-list-item" onclick="openWindow('linkedin'); toggleStartMenu()">
+                <div class="app-list-icon">🔗</div>
+                <div>LinkedIn</div>
+            </div>
+            <div class="app-list-item" onclick="openWindow('resume'); toggleStartMenu()">
+                <div class="app-list-icon">📄</div>
+                <div>Resume</div>
+            </div>
+            <div class="app-list-item" onclick="openWindow('work'); toggleStartMenu()">
+                <div class="app-list-icon">💼</div>
+                <div>My Work</div>
+            </div>
+            
+        </div>
+        
+        <div class="start-menu-tiles">
+            <div class="tiles-section-header">Portfolio</div>
+            <div class="tiles-grid">
+                <div class="portfolio-tile tile-about" onclick="openWindow('about'); toggleStartMenu()">
+                    <div class="tile-icon">🌐</div>
+                    <div class="tile-label">About Me</div>
+                </div>
+                <div class="portfolio-tile tile-resume" onclick="openWindow('resume'); toggleStartMenu()">
+                    <div class="tile-icon">📄</div>
+                    <div class="tile-label">Resume</div>
+                </div>
+                <div class="portfolio-tile tile-work" onclick="openWindow('work'); toggleStartMenu()">
+                    <div class="tile-icon">💼</div>
+                    <div class="tile-label">My Work</div>
+                </div>
+                <div class="portfolio-tile tile-linkedin" onclick="openWindow('linkedin'); toggleStartMenu()">
+                    <div class="tile-icon">🔗</div>
+                    <div class="tile-label">LinkedIn</div>
+                </div>
+                 <div class="portfolio-tile tile-outlook">
+                        <div class="tile-icon">📧</div>
+                        <div class="tile-label">Outlook</div>
+                    </div>
+                    <div class="portfolio-tile tile-word">
+                        <div class="tile-icon">W</div>
+                        <div class="tile-label">Word</div>
+                    </div>
+                    <div class="portfolio-tile tile-excel">
+                        <div class="tile-icon">X</div>
+                        <div class="tile-label">Excel</div>
+                    </div>
+                    <div class="portfolio-tile tile-powerpoint">
+                        <div class="tile-icon">P</div>
+                        <div class="tile-label">PowerPoint</div>
+                    </div>
+                    <div class="portfolio-tile tile-edge">
+                        <div class="tile-icon">🌐</div>
+                        <div class="tile-label">Microsoft Edge</div>
+                    </div>
+                    <div class="portfolio-tile tile-store">
+                        <div class="tile-icon">🛍️</div>
+                        <div class="tile-label">Microsoft Store</div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="start-button" onclick="toggleStartMenu()">
+            <svg class="win-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
+    <path fill="white" d="M1 3l9-1.5v9.5H1V3zm9 9.5v9.5L1 20v-7.5h9zM11.5 1.3L22 0v11H11.5V1.3zM22 12v11l-10.5-1.3V12H22z"/>
+     </svg>
+    </div>
+        <div class="taskbar-apps">
+            <div class="taskbar-app" id="taskbar-about" onclick="focusWindow('about')">About Me</div>
+            <div class="taskbar-app" id="taskbar-resume" onclick="focusWindow('resume')">Resume</div>
+            <div class="taskbar-app" id="taskbar-work" onclick="focusWindow('work')">My Work</div>
+            <div class="taskbar-app" id="taskbar-linkedin" onclick="focusWindow('linkedin')">LinkedIn</div>
+        </div>
+        <div class="system-tray">
+            <span class="time" onclick="alert('Current time: ' + new Date().toLocaleTimeString())" id="clock">12:00 PM</span>
+            <span>🔊</span>
+            <span>📶</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
